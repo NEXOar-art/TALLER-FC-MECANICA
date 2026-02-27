@@ -1,2 +1,2 @@
-# TALLER MECANICO JUAN CARLOS 
+# FC MECANICA GENERAL
 DIAGNÓSTICO EXPERTO Tu auto habla, nosotros escuchamos. Ahorra tiempo pre-cargando los síntomas online y obtén una solución transparente y profesional.
