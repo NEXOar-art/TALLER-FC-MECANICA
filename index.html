@@ -493,8 +493,16 @@ Pre-Diagnóstico
 </div>
 <div id="status-bar-mobile" class="md:hidden w-full py-2 text-center text-xs font-bold uppercase bg-gray-900/80 border-t border-white/10" data-es="Verificando estado..." data-en="Checking status...">Verificando estado...</div>
 </nav>
-<!-- Botones flotantes premium-->
+<!-- Botones flotantes premium (MODIFICADO: agregado botón WhatsApp) -->
 <div class="fixed bottom-24 md:bottom-8 right-4 z-50 animate-float flex flex-col gap-3">
+<!-- Botón flotante de WhatsApp directo (NUEVO) -->
+<a href="https://api.whatsapp.com/send?phone=543834530287" target="_blank" rel="noopener noreferrer" 
+   class="bg-[#25D366] hover:bg-[#128C7E] text-white p-3.5 md:p-4 rounded-full shadow-lg transition-all hover:scale-110 flex items-center justify-center gap-2 group" 
+   title="Chat directo por WhatsApp" style="animation: float 6s ease-in-out infinite;">
+  <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
+  <span class="hidden lg:inline text-xs font-bold whitespace-nowrap">Chat</span>
+</a>
+
 <a href="#diagnostico" class="btn-primary px-5 py-3 md:px-7 md:py-3.5 rounded-2xl shadow-neon transition flex items-center gap-2.5 hover:shadow-glow text-sm font-semibold group">
 <i class="fa-solid fa-calendar-check text-lg"></i>
 <span class="hidden xs:inline" data-es="Pedir Turno" data-en="Book Appointment">Pedir Turno</span>
@@ -860,10 +868,12 @@ Completa el formulario y nuestros técnicos prepararán el análisis previo ante
 <div>
 <select id="inputFuelType" class="input-modern w-full bg-transparent p-4 rounded-xl outline-none text-sm appearance-none" required>
 <option value="" disabled selected data-es="Tipo de combustible..." data-en="Fuel type...">Tipo de combustible...</option>
+<optgroup label="🔋 ARRANQUE Y ENERGÍA" class="text-gray-300">
 <option value="Naftero" data-es="Naftero(Gasolina)" data-en="Gasoline">Naftero(Gasolina)</option>
 <option value="Diesel" data-es="Diesel" data-en="Diesel">Diesel</option>
 <option value="Híbrido" data-es="Híbrido" data-en="Hybrid">Híbrido</option>
 <option value="Eléctrico" data-es="Eléctrico" data-en="Electric">Eléctrico</option>
+</optgroup>
 </select>
 <label for="inputFuelType" class="label-below"><span data-es="Combustible" data-en="Fuel">Combustible</span><span class="required">*</span></label>
 <i class="fa-solid fa-chevron-down absolute right-4 top-[10.9rem] md:top-[4.65rem] -translate-y-1/2 text-gray-500 text-xs pointer-events-none"></i>
@@ -944,7 +954,7 @@ Completa el formulario y nuestros técnicos prepararán el análisis previo ante
 </div>
 </div>
 </section>
-<!-- SECCIÓN: UBICACIÓN Y CONFIANZA-->
+<!-- SECCIÓN: UBICACIÓN Y CONFIANZA (MODIFICADO: agregada dirección y WhatsApp) -->
 <section class="py-14 md:py-20 bg-[#0D0D0D] border-t border-white/5">
 <div class="container mx-auto px-4 text-center">
 <!-- Logos de marcas(grayscale to color on hover)-->
@@ -956,33 +966,37 @@ Completa el formulario y nuestros técnicos prepararán el análisis previo ante
 <i class="fa-brands fa-volkswagen text-4xl md:text-5xl hover:text-white transition-colors"></i>
 <i class="fa-solid fa-truck-pickup text-4xl md:text-5xl hover:text-white transition-colors"></i>
 </div>
-<!-- Card de ubicación-->
+<!-- Card de ubicación (MODIFICADO) -->
 <div class="glass-card rounded-3xl p-6 md:p-10 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
 <div class="text-left max-w-md">
 <h3 class="font-display font-bold text-2xl md:text-3xl text-white mb-2" data-es="¿Dónde estamos?" data-en="Where are we?">¿Dónde estamos?</h3>
 <p class="text-gray-400/90 mb-4 text-base" data-es="Visítanos para validación final y reparaciones especializadas." data-en="Visit us for final validation and specialized repairs.">Visítanos para validación final y reparaciones especializadas.</p>
+
+<!-- Dirección (NUEVO) -->
+<div class="flex items-start gap-3 text-gray-300/90 text-sm mb-2">
+<i class="fa-regular fa-location-dot text-primary-green text-xl mt-0.5 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Dirección:</p>
+<p>Manuel Ponferrada 156, San Fernando del Valle de Catamarca</p>
+</div>
+</div>
+
+<!-- WhatsApp (NUEVO) -->
+<div class="flex items-start gap-3 text-gray-300/90 text-sm mb-2">
+<i class="fa-brands fa-whatsapp text-primary-green text-xl mt-0.5 flex-shrink-0"></i>
+<div>
+<p class="font-medium">WhatsApp:</p>
+<p dir="ltr">+54-3834530287</p>
+</div>
+</div>
+
+<!-- Horarios (ACTUALIZADO: Lunes a Sábado 08:00 - 21:00) -->
 <div class="flex items-start gap-3 text-gray-300/90 text-sm">
 <i class="fa-regular fa-clock text-primary-green text-xl mt-0.5 flex-shrink-0"></i>
 <div>
 <p class="font-medium" data-es="Horarios de atención:" data-en="Business hours:">Horarios de atención:</p>
 <p data-es="Lunes a Sábado: 08:00 - 21:00" data-en="Monday to Saturday: 08:00 - 21:00">Lunes a Sábado: 08:00 - 21:00</p>
 <p data-es="Domingo: Cerrado" data-en="Sunday: Closed">Domingo: Cerrado</p>
-</div>
-</div>
-<!-- Dirección -->
-<div class="flex items-start gap-3 text-gray-300/90 text-sm mt-3">
-<i class="fa-solid fa-location-dot text-primary-green text-xl mt-0.5 flex-shrink-0"></i>
-<div>
-<p class="font-medium" data-es="Dirección:" data-en="Address:">Dirección:</p>
-<p>Manuel Ponferrada 156, San Fernando del Valle de Catamarca</p>
-</div>
-</div>
-<!-- WhatsApp -->
-<div class="flex items-start gap-3 text-gray-300/90 text-sm mt-3">
-<i class="fa-brands fa-whatsapp text-primary-green text-xl mt-0.5 flex-shrink-0"></i>
-<div>
-<p class="font-medium" data-es="WhatsApp:" data-en="WhatsApp:">WhatsApp:</p>
-<p>+54-3834530287</p>
 </div>
 </div>
 </div>
@@ -1003,7 +1017,7 @@ Completa el formulario y nuestros técnicos prepararán el análisis previo ante
 </div>
 </div>
 </section>
-<!-- FOOTER-->
+<!-- FOOTER (MODIFICADO: agregada firma NEXO-Art) -->
 <footer class="bg-primary-dark/95 text-gray-500 py-10 md:py-14 border-t border-white/10">
 <div class="container mx-auto px-4">
 <div class="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -1020,9 +1034,14 @@ Completa el formulario y nuestros técnicos prepararán el análisis previo ante
 </a>
 </div>
 </div>
-<div class="border-t border-white/10 mt-8 pt-6 text-center text-sm">
-<p>&copy; <span id="current-year">2025</span> MECANICA CORTEZ. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
-<p class="text-gray-600 mt-1 text-xs" data-es="Sitio web desarrollado con tecnología moderna" data-en="Website developed with modern technology">Sitio web desarrollado con tecnología moderna</p>
+<!-- Firma del diseñador NEXO-Art (NUEVO) -->
+<div class="border-t border-white/10 mt-6 pt-4 text-center">
+<a href="https://nexoar-art.github.io/NEXO-art/" target="_blank" rel="noopener noreferrer" 
+   class="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-primary-green transition font-medium group">
+<i class="fa-solid fa-pen-nib group-hover:scale-110 transition-transform"></i>
+Diseño: NEXO-Art
+</a>
+<p class="text-gray-600 mt-2 text-xs" data-es="Sitio web desarrollado con tecnología moderna" data-en="Website developed with modern technology">Sitio web desarrollado con tecnología moderna</p>
 </div>
 </div>
 </footer>
@@ -1035,7 +1054,7 @@ Completa el formulario y nuestros técnicos prepararán el análisis previo ante
 <i class="fa-solid fa-microchip"></i> <span data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</span>
 </a>
 </div>
-<!-- JAVASCRIPT FUNCIONAL-->
+<!-- JAVASCRIPT FUNCIONAL (MODIFICADO: lógica de horarios actualizada) -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
 // Language Switcher
@@ -1080,7 +1099,7 @@ container.appendChild(particle);
 }
 }
 createParticles();
-// Verificar estado de apertura(horarios actualizados: L-S 08:00-21:00, D Cerrado)
+// Verificar estado de apertura (ACTUALIZADO: Lunes a Sábado 08:00-21:00)
 function checkStatus(){
 const now= new Date();
 const hours= now.getHours();
@@ -1089,11 +1108,11 @@ const day= now.getDay();// 0= Domingo, 1= Lunes,..., 6= Sábado
 // Convertir a horas decimales para comparación precisa
 const currentTime= hours+ minutes/60;
 let isOpen= false;
-// Lunes a Sábado(1-6): 08:00 a 21:00
+// Lunes a Sábado (1-6): 08:00 a 21:00 (MODIFICADO)
 if(day>=1 && day<=6){
-isOpen= currentTime>=8.0 && currentTime<21.0;
+isOpen= currentTime>=8 && currentTime<21;
 }
-// Domingo(0): Cerrado
+// Domingo (0): Cerrado
 else{
 isOpen= false;
 }
@@ -1119,16 +1138,12 @@ let nextOpen='';
 if(currentLang=== 'es'){
 if(day===0){// Domingo: abre lunes 08:00
 nextOpen='Abre Lunes 08:00';
-} else if(day===6){// Sábado
-if(currentTime>=21.0){
+} else if(day===6){// Sábado: abre lunes
 nextOpen='Abre Lunes 08:00';
-} else {
-nextOpen='Abre hoy 08:00';
-}
 } else{// Lunes a Viernes
-if(currentTime>=21.0){
+if(currentTime>=21){
 nextOpen='Abre mañana 08:00';
-} else if(currentTime<8.0){
+} else if(currentTime<8){
 nextOpen='Abre hoy 08:00';
 }
 }
@@ -1136,16 +1151,12 @@ barMobile.textContent=`🔴 Cerrado - ${nextOpen}`;
 }else{
 if(day===0){// Sunday: opens Monday 08:00
 nextOpen='Opens Mon 08:00';
-} else if(day===6){// Saturday
-if(currentTime>=21.0){
+} else if(day===6){// Saturday: opens Monday
 nextOpen='Opens Mon 08:00';
-} else {
-nextOpen='Opens Today 08:00';
-}
 } else{// Monday to Friday
-if(currentTime>=21.0){
+if(currentTime>=21){
 nextOpen='Opens tomorrow 08:00';
-} else if(currentTime<8.0){
+} else if(currentTime<8){
 nextOpen='Opens today 08:00';
 }
 }
